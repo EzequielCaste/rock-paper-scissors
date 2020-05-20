@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Rock Paper Scissors</title>
+	<style type="text/css">
+		.container {
+			border:0px solid purple;
+			margin: 50px auto;
+			width:30%;
+		}
+		.player1 {
+			float: left;
+		}
+		.player2 {
+			float: right;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+	<h1>Lets Play Rock Paper Scissors</h1>
+	
+		<div class="player1">	
+			<h3>Player Choose: </h3>
+
+			<form action="rockpaper_submit" method="get" accept-charset="utf-8">			
+				<input type="radio" id="p1rock" name="p1" value="Rock" checked>Rock <br>
+				<input type="radio" id="p1paper" name="p1" value="Paper">Paper <br>
+				<input type="radio" id="p1scissors" name="p1" value="Scissors">Scissors 
+			</form>
+		</div>
+
+		<div class="player2">	
+			<h3>Computer Choose: <span>???</span></h3>
+
+		</div>
+	</div>
+
+
+<script type="text/javascript">
+
+	//generar un numero aleatorio entre 1 y 3
+	//a cada num le corresponde R P S
+	// 1 > Rock
+	// 2 > Paper
+	// 3 > Scissors
+
+	// P wins over R 2 le gana al 1
+	// R wins over S 1 le gana al 3
+	// S wins over P 3 le gana al 2
+
+	//por ejemplo player1 tiene 2 cpu 3
+	//quien gana??
+	//si p1 2 si cpu === 1 gana p1
+
+	let rng = newRan();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	function newRan(){
+		return (Math.floor(Math.random()*3));
+	}
+
+	
+	let valorp1 = 0;	
+	
+	let cpu = document.querySelector("span");
+	let p1 = document.querySelectorAll("input[type='radio']");
+
+	
+
+
+	for( var i=0; i<p1.length; i++){
+
+		p1[i].addEventListener("change", cambio);
+
+	}
+
+	function cambio(){
+		
+		switch (this.value) {
+				case 'Rock':
+				valorp1 = 0;
+				break;
+				case 'Paper':
+				valorp1 = 1;
+				break;
+				case 'Scissors':
+				valorp1 = 2;
+				break;
+			}
+
+		console.log(valorp1)		
+
+		if( rng === valorp1 ){
+			alert("tie")
+		} else {
+			if(rng < valorp1 ){
+				alert("Player Wins!")
+			} else {
+				alert("Computer Wins!")
+			}
+		}
+
+	reset();
+	}
+
+	function reset(){
+
+		rng = newRan();		
+		valorp1 = 0;
+		
+		switch (rng) {
+			case 0:
+			cpu.textContent = 'Rock';
+			break;
+			case 1:
+			cpu.textContent = 'Paper';
+			break;
+			case 2:
+			cpu.textContent = 'Scissors';
+			break;
+		}
+
+	}
+
+
+
+</script>
+</body>
+</html>
