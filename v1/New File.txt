@@ -1,6 +1,0 @@
-player clicks on RPS button
-
-buttons trigger animation and countdown
-when animation and countdown is completed
-change images of hands to the chosen RPS icon
-display message win lose or tie
