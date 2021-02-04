@@ -2,4 +2,4 @@
 
 Simple game for educational purposes.
 
-[Live link](https://ezzep66.github.io/rock-paper-scissors/)
+[Live link](https://ezequielcaste.github.io/rock-paper-scissors/)
